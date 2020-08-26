@@ -13,7 +13,7 @@ function chefe() {
                     break;
             case 5: requisito5(vetor)
                     break;
-            case 6: console.log(`O programa será encerrado!`)
+            case 6: console.log(`O programa foi encerrado!`)
                     break;
             default: console.log(`Opção inválida!`)
 
@@ -23,16 +23,27 @@ function chefe() {
 }
 function requisito1(vet) { // vet aponta para vetor
     var objeto = new Object ()
-    objeto.sexo = prompt(`Informe o sexo`)
+    objeto.sexo = prompt(`Informe o sexo`).toUpperCase
     objeto.altura = Number(prompt(`Informe a altura`))
     objeto.idade = Number(prompt(`Informe a idade`))
-    objeto.olhos = prompt(`Informe a cor dos olhos: A- azuis, V- verdes ou C - castanhos`)
+    objeto.olhos = prompt(`Informe a cor dos olhos: A- azuis, V- verdes ou C - castanhos`).toUpperCase
     // insere no vetor (escopo global)
     vet.push(objeto)
     console.log(`Habitante cadastrado com sucesso!`)
 }
 function requisito2(vet) { // vet aponta para vetor
-
+    var soma = 0
+    var contador = 0
+    for (var i = 0; i < vet.length; i++) {
+        if ((vet[i].olhos == `C`) && (vet[i].altura > 1.60)) {
+            soma = soma + vet[i].idade
+            contador++
+        }
+    }
+    if (contador != 0) {
+        console.log(`Não existe habitante com essas características!`)
+    }
+    console.log(`A média de idade das pessoas com olhos castanhos e altura superior a 1.60 é: ${soma/contador}`)
 }
 function requisito3(vet) { // vet aponta para vetor
 
