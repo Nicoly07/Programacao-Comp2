@@ -46,6 +46,13 @@ function requisito2(vet) { // vet aponta para vetor
     console.log(`A média de idade das pessoas com olhos castanhos e altura superior a 1.60 é: ${soma/contador}`)
 }
 function requisito3(vet) { // vet aponta para vetor
+    var maioridade = vet[0].idade
+    for (var i = 0; i < vet.length; i++) {
+        if (vet[i].idade > maioridade) {
+            maioridade = vet[i].idade
+        }
+    }
+    console.log(`A maior idade é: ${maioridade}`)
 
 }
 function requisito4(vet) { // vet aponta para vetor
