@@ -60,11 +60,16 @@ function requisito4(vet) { // vet aponta para vetor
     for (var i = 0; i < vet.length; i++) {
         if (((vet[i].sexo == `F`) && ((vet[i].idade >= 20) && (vet[i].idade <= 40)) ||
         (vet[i].olhos == `V`) && (vet[i].altura < 1.70))
-
-        quantida++
+        quantidade++
     }
+    console.log(`A quantidade de mulheres é: ${quantidade}`)
 
 }
 function requisito5(vet) { // vet aponta para vetor
-
+    for (var i = 0; i < vet.length; i++) {
+        if (vet[i].sexo == `M`) {
+            quantidade++
+        }
+    }
+    console.log(`O percentual de homens é: ${quantidade/vet.length*100}`) 
 }
