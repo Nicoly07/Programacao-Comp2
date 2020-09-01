@@ -56,6 +56,13 @@ function requisito3(vet) { // vet aponta para vetor
 
 }
 function requisito4(vet) { // vet aponta para vetor
+    var quantidade = 0
+    for (var i = 0; i < vet.length; i++) {
+        if (((vet[i].sexo == `F`) && ((vet[i].idade >= 20) && (vet[i].idade <= 40)) ||
+        (vet[i].olhos == `V`) && (vet[i].altura < 1.70))
+
+        quantida++
+    }
 
 }
 function requisito5(vet) { // vet aponta para vetor
