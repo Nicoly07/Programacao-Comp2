@@ -10,7 +10,7 @@ function chefe() {
         3 para Consultar vendas do vendedor no mês
         4 para Consultar vendas do vendedor
         5 para Consultar maior venda de determinado vendedor
-        6 Fazer
+        6 para consultar o mês com mais vendas
         7 para Sair`))
         switch (opcao) {
             case 1: cadastravendedor(vendedores)
@@ -23,7 +23,9 @@ function chefe() {
                     break;
             case 5: consultamaiorvendedor(vendas)
                     break;
-            case 6: console.log(`Sair do programa!`)
+            case 6: consultamesmaisvendas(vendas)
+                    break;
+            case 7: console.log(`Sair do programa!`)
                     break;
         }           
     }
@@ -105,4 +107,21 @@ function consultamaiorvendedor(vend) {
         }
     }
     console.log(`Maior venda: ${maiorvenda}. Vendedor: ${codigovendedor}`)
+}
+function consultamesmaisvendas(vend) {
+    // cria um vetor que vai conter o total de vendas
+    let meses = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for (let i = 0; i < vend.length; i++) {
+        let posicao = vend[i].mes - 1
+        meses[posicao] = meses[posicao] + vend[i].valor
+    }
+    // descobrir o maior valor no vetor
+    let maiorvalor = meses[0]
+    for (let i = 1; i < vend.length; i++) {
+        if (vend[i].valor > maiorvalor) {
+            maiorvalor = vend[i].valor
+        }
+    }
+    let posicao = vend.indexOf(maiorvalor) // posição no vetor com o maior valor
+    console.log(`Mês com mais vendas: ${posicao + 1}. O valor é: ${maiorvalor}`). 
 }
